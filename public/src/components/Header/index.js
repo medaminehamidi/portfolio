@@ -1,4 +1,4 @@
-import { Button, IconButton, InputAdornment, TextField, Typography } from '@material-ui/core'
+import { Button, IconButton, InputAdornment, TextField, Typography, useMediaQuery } from '@material-ui/core'
 import { createUseStyles } from 'react-jss'
 import { logo2 } from '../../assets'
 import style from './style'
@@ -9,6 +9,7 @@ const useStyles = createUseStyles(style)
 
 export default () => {
   const [search2, setSearch] = useState('')
+  const matches = useMediaQuery('(min-width:1100px)')
   const { logoStyle, topbarRightSide, title, topbar, title2, topbarLeftSide, textinput, button, topSection, searchContainer, searchSubContainer, bigTitle } = useStyles()
   return (
     <>
@@ -21,15 +22,19 @@ export default () => {
             </Typography>
           </div>
           <div className={topbarLeftSide}>
-            <Typography variant='h4' className={title}>
-              Explore
-            </Typography>
-            <Typography variant='h4' className={title}>
-              Licence
-            </Typography>
-            <Typography variant='h4' className={title}>
-              Upload
-            </Typography>
+            {matches && (
+              <>
+                <Typography variant='h4' className={title}>
+                  Explore
+                </Typography>
+                <Typography variant='h4' className={title}>
+                  Licence
+                </Typography>
+                <Typography variant='h4' className={title}>
+                  Upload
+                </Typography>
+              </>
+            )}
             <Typography variant='h4' className={title}>
               ...
             </Typography>

@@ -12,13 +12,18 @@ export default {
     display: 'flex',
     color: '#000 !important'
   },
-  picsContainer: {
+  picsContainer: (matches) => ({
     display: 'flex',
     justifyContent: 'space-around',
+    flexDirection: matches ? 'row' : 'column',
     padding: 16
+  }),
+  picsBigRow: {
+    display: 'flex',
+    flexDirection: 'row'
   },
   picsRow: {
-    width: '25%',
+    width: '90%',
     display: 'flex',
     flexDirection: 'column',
     margin: 8
