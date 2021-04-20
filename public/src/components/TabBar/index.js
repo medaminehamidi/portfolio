@@ -1,4 +1,3 @@
-import Header from '../../components/Header'
 import { Typography } from '@material-ui/core'
 import { createUseStyles } from 'react-jss'
 import style from './style'
