@@ -1,4 +1,5 @@
 import logo from './images/logo.png'
+import logo2 from './images/logo.svg'
 import image1 from './images/alone.jpg'
 import image2 from './images/beauty.jpg'
 import image3 from './images/dog.jpg'
@@ -18,5 +19,6 @@ export {
   image5,
   image6,
   image7,
-  image8
+  image8,
+  logo2
 }

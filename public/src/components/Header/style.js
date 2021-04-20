@@ -26,7 +26,21 @@ export default {
     width: '80px !important',
     justifyContent: 'center',
     display: 'flex',
-    color: '#fff !important'
+    color: '#fff !important',
+    '&:hover': {
+      color: '#05a081 !important'
+    },
+    cursor: 'pointer'
+  },
+  title2: {
+    fontSize: '19px !important',
+    paddingLeft: 12,
+    width: '80px !important',
+    fontWeight: 'bold !important',
+    justifyContent: 'center',
+    display: 'flex',
+    color: '#fff !important',
+    cursor: 'pointer'
   },
   button: {
     color: '#fff !important',

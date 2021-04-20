@@ -11,22 +11,27 @@ export default () => {
       <div className={tabs}>
         <div className={selectedTab}>
           <Typography variant='h4' className={selectedTitle}>
-            Selected Dick
+            Home
           </Typography>
         </div>
         <div className={tab}>
           <Typography variant='h4' className={title}>
-            Dick
+            Discover
           </Typography>
         </div>
         <div className={tab}>
           <Typography variant='h4' className={title}>
-            Dick
+            Videos
           </Typography>
         </div>
         <div className={tab}>
           <Typography variant='h4' className={title}>
-            Dick
+            Leaderboard
+          </Typography>
+        </div>
+        <div className={tab}>
+          <Typography variant='h4' className={title}>
+            Challenges
           </Typography>
         </div>
       </div>

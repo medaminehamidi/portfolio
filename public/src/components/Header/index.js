@@ -1,6 +1,6 @@
 import { Button, IconButton, InputAdornment, TextField, Typography } from '@material-ui/core'
 import { createUseStyles } from 'react-jss'
-import { logo } from '../../assets'
+import { logo2 } from '../../assets'
 import style from './style'
 import SearchIcon from '@material-ui/icons/Search'
 import { useState } from 'react'
@@ -9,15 +9,15 @@ const useStyles = createUseStyles(style)
 
 export default () => {
   const [search2, setSearch] = useState('')
-  const { logoStyle, topbarRightSide, title, topbar, topbarLeftSide, textinput, button, topSection, searchContainer, searchSubContainer, bigTitle } = useStyles()
+  const { logoStyle, topbarRightSide, title, topbar, title2, topbarLeftSide, textinput, button, topSection, searchContainer, searchSubContainer, bigTitle } = useStyles()
   return (
     <>
       <div className={topSection}>
         <div className={topbar}>
           <div className={topbarRightSide}>
-            <img src={logo} className={logoStyle} />
-            <Typography variant='h4' className={title}>
-              Dick
+            <img src={logo2} className={logoStyle} />
+            <Typography variant='h4' className={title2}>
+              Pixel
             </Typography>
           </div>
           <div className={topbarLeftSide}>

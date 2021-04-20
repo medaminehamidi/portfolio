@@ -21,11 +21,11 @@ export default {
     width: '25%',
     display: 'flex',
     flexDirection: 'column',
-    margin: 12
+    margin: 8
   },
   image: {
     width: '100%',
-    margin: 12,
-    borderRadius: 4
+    margin: 8,
+    borderRadius: 2
   }
 }
