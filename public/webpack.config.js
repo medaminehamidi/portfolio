@@ -63,7 +63,6 @@ module.exports = _ => {
       proxy: {
         '/api/**': {
           // target: 'http://localhost:5454',
-          target: 'https://api.alphorm.net',
           secure: false,
           changeOrigin: true
         }

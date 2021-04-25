@@ -1,7 +1,7 @@
 {
-  "name": "pro-boa",
+  "name": "portfolio",
   "version": "0.0.1",
-  "description": "Alphorm PRO BOA",
+  "description": "Portfolio",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
@@ -15,16 +15,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://alphorm.visualstudio.com/AlphormVNext/_git/front"
+    "url": "https://github.com/medaminehamidi/portfolio"
   },
   "keywords": [
-    "alphorm",
-    "repbackoffice",
-    "repadmin",
-    "dashboard",
     "react"
   ],
-  "author": "Alphorm Team",
+  "author": "Dev",
   "license": "ISC",
   "dependencies": {
     "@material-ui/core": "^4.11.2",
