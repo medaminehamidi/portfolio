@@ -7,7 +7,7 @@ const useStyles = createUseStyles(style)
 
 export default () => {
   const matches = useMediaQuery('(min-width:1100px)')
-  const { titleSection, title, picsContainer, picsBigRow, picsRow, image } = useStyles(matches)
+  const { titleSection, title, cardTitle, cardContainer, picsContainer, picsBigRow, picsRow, image } = useStyles(matches)
   return (
     <>
       <div className={titleSection}>
@@ -18,38 +18,164 @@ export default () => {
       <div className={picsContainer}>
         <div className={picsBigRow}>
           <div className={picsRow}>
-            <img src={image1} className={image} />
-            <img src={image2} className={image} />
-            <img src={image7} className={image} />
-            <img src={image5} className={image} />
-            <img src={image1} className={image} />
-            <img src={image3} className={image} />
+            <div className={cardContainer} onClick={() => window.open('https://stackoverflow.com/questions/4907843/open-a-url-in-a-new-tab-and-not-a-new-window', '_blank')}>
+              <img src={image1} className={image} />
+              <Typography variant='h4' className={cardTitle}>
+                Free Stock Photos
+              </Typography>
+            </div>
+            <div className={cardContainer} onClick={() => window.open('https://stackoverflow.com/questions/4907843/open-a-url-in-a-new-tab-and-not-a-new-window', '_blank')}>
+              <img src={image1} className={image} />
+              <Typography variant='h4' className={cardTitle}>
+                Free Stock Photos
+              </Typography>
+            </div>
+            <div className={cardContainer} onClick={() => window.open('https://stackoverflow.com/questions/4907843/open-a-url-in-a-new-tab-and-not-a-new-window', '_blank')}>
+              <img src={image7} className={image} />
+              <Typography variant='h4' className={cardTitle}>
+                Free Stock Photos
+              </Typography>
+            </div>
+            <div className={cardContainer} onClick={() => window.open('https://stackoverflow.com/questions/4907843/open-a-url-in-a-new-tab-and-not-a-new-window', '_blank')}>
+              <img src={image5} className={image} />
+              <Typography variant='h4' className={cardTitle}>
+                Free Stock Photos
+              </Typography>
+            </div>
+            <div className={cardContainer} onClick={() => window.open('https://stackoverflow.com/questions/4907843/open-a-url-in-a-new-tab-and-not-a-new-window', '_blank')}>
+              <img src={image1} className={image} />
+              <Typography variant='h4' className={cardTitle}>
+                Free Stock Photos
+              </Typography>
+            </div>
           </div>
           <div className={picsRow}>
-            <img src={image4} className={image} />
-            <img src={image5} className={image} />
-            <img src={image1} className={image} />
-            <img src={image2} className={image} />
-            <img src={image3} className={image} />
-            <img src={image6} className={image} />
+            <div className={cardContainer} onClick={() => window.open('https://stackoverflow.com/questions/4907843/open-a-url-in-a-new-tab-and-not-a-new-window', '_blank')}>
+              <img src={image4} className={image} />
+              <Typography variant='h4' className={cardTitle}>
+                Free Stock Photos
+              </Typography>
+            </div>
+            <div className={cardContainer} onClick={() => window.open('https://stackoverflow.com/questions/4907843/open-a-url-in-a-new-tab-and-not-a-new-window', '_blank')}>
+              <img src={image5} className={image} />
+              <Typography variant='h4' className={cardTitle}>
+                Free Stock Photos
+              </Typography>
+            </div>
+            <div className={cardContainer} onClick={() => window.open('https://stackoverflow.com/questions/4907843/open-a-url-in-a-new-tab-and-not-a-new-window', '_blank')}>
+              <img src={image1} className={image} />
+              <Typography variant='h4' className={cardTitle}>
+                Free Stock Photos
+              </Typography>
+            </div>
+            <div className={cardContainer} onClick={() => window.open('https://stackoverflow.com/questions/4907843/open-a-url-in-a-new-tab-and-not-a-new-window', '_blank')}>
+              <img src={image2} className={image} />
+              <Typography variant='h4' className={cardTitle}>
+                Free Stock Photos
+              </Typography>
+            </div>
+            <div className={cardContainer} onClick={() => window.open('https://stackoverflow.com/questions/4907843/open-a-url-in-a-new-tab-and-not-a-new-window', '_blank')}>
+              <img src={image3} className={image} />
+              <Typography variant='h4' className={cardTitle}>
+                Free Stock Photos
+              </Typography>
+            </div>
+            <div className={cardContainer} onClick={() => window.open('https://stackoverflow.com/questions/4907843/open-a-url-in-a-new-tab-and-not-a-new-window', '_blank')}>
+              <img src={image6} className={image} />
+              <Typography variant='h4' className={cardTitle}>
+                Free Stock Photos
+              </Typography>
+            </div>
+            <div className={cardContainer} onClick={() => window.open('https://stackoverflow.com/questions/4907843/open-a-url-in-a-new-tab-and-not-a-new-window', '_blank')}>
+              <img src={image7} className={image} />
+              <Typography variant='h4' className={cardTitle}>
+                Free Stock Photos
+              </Typography>
+            </div>
+            <div className={cardContainer} onClick={() => window.open('https://stackoverflow.com/questions/4907843/open-a-url-in-a-new-tab-and-not-a-new-window', '_blank')}>
+              <img src={image1} className={image} />
+              <Typography variant='h4' className={cardTitle}>
+                Free Stock Photos
+              </Typography>
+            </div>
           </div>
         </div>
         <div className={picsBigRow}>
           <div className={picsRow}>
-            <img src={image7} className={image} />
-            <img src={image1} className={image} />
-            <img src={image4} className={image} />
-            <img src={image5} className={image} />
-            <img src={image1} className={image} />
-            <img src={image2} className={image} />
+            <div className={cardContainer} onClick={() => window.open('https://stackoverflow.com/questions/4907843/open-a-url-in-a-new-tab-and-not-a-new-window', '_blank')}>
+              <img src={image7} className={image} />
+              <Typography variant='h4' className={cardTitle}>
+                Free Stock Photos
+              </Typography>
+            </div>
+            <div className={cardContainer} onClick={() => window.open('https://stackoverflow.com/questions/4907843/open-a-url-in-a-new-tab-and-not-a-new-window', '_blank')}>
+              <img src={image1} className={image} />
+              <Typography variant='h4' className={cardTitle}>
+                Free Stock Photos
+              </Typography>
+            </div>
+            <div className={cardContainer} onClick={() => window.open('https://stackoverflow.com/questions/4907843/open-a-url-in-a-new-tab-and-not-a-new-window', '_blank')}>
+              <img src={image4} className={image} />
+              <Typography variant='h4' className={cardTitle}>
+                Free Stock Photos
+              </Typography>
+            </div>
+            <div className={cardContainer} onClick={() => window.open('https://stackoverflow.com/questions/4907843/open-a-url-in-a-new-tab-and-not-a-new-window', '_blank')}>
+              <img src={image5} className={image} />
+              <Typography variant='h4' className={cardTitle}>
+                Free Stock Photos
+              </Typography>
+            </div>
+            <div className={cardContainer} onClick={() => window.open('https://stackoverflow.com/questions/4907843/open-a-url-in-a-new-tab-and-not-a-new-window', '_blank')}>
+              <img src={image1} className={image} />
+              <Typography variant='h4' className={cardTitle}>
+                Free Stock Photos
+              </Typography>
+            </div>
+            <div className={cardContainer} onClick={() => window.open('https://stackoverflow.com/questions/4907843/open-a-url-in-a-new-tab-and-not-a-new-window', '_blank')}>
+              <img src={image2} className={image} />
+              <Typography variant='h4' className={cardTitle}>
+                Free Stock Photos
+              </Typography>
+            </div>
           </div>
           <div className={picsRow}>
-            <img src={image8} className={image} />
-            <img src={image3} className={image} />
-            <img src={image1} className={image} />
-            <img src={image2} className={image} />
-            <img src={image8} className={image} />
-            <img src={image2} className={image} />
+            <div className={cardContainer} onClick={() => window.open('https://stackoverflow.com/questions/4907843/open-a-url-in-a-new-tab-and-not-a-new-window', '_blank')}>
+              <img src={image8} className={image} />
+              <Typography variant='h4' className={cardTitle}>
+                Free Stock Photos
+              </Typography>
+            </div>
+            <div className={cardContainer} onClick={() => window.open('https://stackoverflow.com/questions/4907843/open-a-url-in-a-new-tab-and-not-a-new-window', '_blank')}>
+              <img src={image3} className={image} />
+              <Typography variant='h4' className={cardTitle}>
+                Free Stock Photos
+              </Typography>
+            </div>
+            <div className={cardContainer} onClick={() => window.open('https://stackoverflow.com/questions/4907843/open-a-url-in-a-new-tab-and-not-a-new-window', '_blank')}>
+              <img src={image1} className={image} />
+              <Typography variant='h4' className={cardTitle}>
+                Free Stock Photos
+              </Typography>
+            </div>
+            <div className={cardContainer} onClick={() => window.open('https://stackoverflow.com/questions/4907843/open-a-url-in-a-new-tab-and-not-a-new-window', '_blank')}>
+              <img src={image2} className={image} />
+              <Typography variant='h4' className={cardTitle}>
+                Free Stock Photos
+              </Typography>
+            </div>
+            <div className={cardContainer} onClick={() => window.open('https://stackoverflow.com/questions/4907843/open-a-url-in-a-new-tab-and-not-a-new-window', '_blank')}>
+              <img src={image8} className={image} />
+              <Typography variant='h4' className={cardTitle}>
+                Free Stock Photos
+              </Typography>
+            </div>
+            <div className={cardContainer} onClick={() => window.open('https://stackoverflow.com/questions/4907843/open-a-url-in-a-new-tab-and-not-a-new-window', '_blank')}>
+              <img src={image2} className={image} />
+              <Typography variant='h4' className={cardTitle}>
+                Free Stock Photos
+              </Typography>
+            </div>
           </div>
         </div>
       </div>

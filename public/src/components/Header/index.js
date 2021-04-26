@@ -1,16 +1,19 @@
-import { Button, IconButton, InputAdornment, TextField, Typography, useMediaQuery } from '@material-ui/core'
+import { Button, IconButton, InputAdornment, TextField, Typography } from '@material-ui/core'
 import { createUseStyles } from 'react-jss'
 import { logo2 } from '../../assets'
 import style from './style'
 import SearchIcon from '@material-ui/icons/Search'
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { push } from 'connected-react-router'
 
 const useStyles = createUseStyles(style)
 
 export default () => {
   const [search2, setSearch] = useState('')
-  const matches = useMediaQuery('(min-width:1100px)')
-  const { logoStyle, topbarRightSide, title, topbar, title2, topbarLeftSide, textinput, button, topSection, searchContainer, searchSubContainer, bigTitle } = useStyles()
+  const dispatch = useDispatch()
+  // const matches = useMediaQuery('(min-width:1100px)')
+  const { logoStyle, topbarRightSide, topbar, title2, topbarLeftSide, textinput, button, topSection, searchContainer, searchSubContainer, bigTitle } = useStyles()
   return (
     <>
       <div className={topSection}>
@@ -22,7 +25,7 @@ export default () => {
             </Typography>
           </div>
           <div className={topbarLeftSide}>
-            {matches && (
+            {/* {matches && (
               <>
                 <Typography variant='h4' className={title}>
                   Explore
@@ -37,9 +40,9 @@ export default () => {
             )}
             <Typography variant='h4' className={title}>
               ...
-            </Typography>
-            <Button variant='contained' className={button}>
-              Join
+            </Typography> */}
+            <Button variant='contained' onClick={() => dispatch(push('/admin'))} className={button}>
+              Admin Page
             </Button>
           </div>
         </div>

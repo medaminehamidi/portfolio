@@ -29,8 +29,29 @@ export default {
     margin: 8
   },
   image: {
+    '&:hover': {
+      filter: 'brightness(50%)'
+    },
     width: '100%',
     margin: 8,
     borderRadius: 2
+  },
+  cardTitle: {
+    fontSize: '16px !important',
+    display: 'none',
+    color: '#fcfcfc !important',
+    position: 'relative',
+    bottom: 44,
+    left: 30,
+    lineHeight: '0 !important'
+  },
+  cardContainer: {
+    '&:hover': {
+      '& > h4': {
+        display: 'flex'
+      }
+    },
+    cursor: 'pointer',
+    width: '100%'
   }
 }
