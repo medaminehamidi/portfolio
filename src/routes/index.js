@@ -17,6 +17,6 @@ export default _ =>
     </Switch>
   </ConnectedRouter>
 
-export const HomePath = '/'
+export const HomePath = '/home'
 export const ErrorPath = '/error'
 export const AdminPath = '/admin'
