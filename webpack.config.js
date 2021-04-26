@@ -1,33 +1,36 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin')
-const path = require('path')
-const { ContextReplacementPlugin } = require('webpack')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const dist = path.resolve(__dirname, 'dist')
+const Dotenv = require('dotenv-webpack')
 
-module.exports = _ => {
+const htmlPlugin = new HtmlWebPackPlugin({
+  template: './src/templates/index.html',
+  chunks: ['vendors', 'app'],
+  filename: './index.html'
+})
+
+const {
+  srcPath,
+  distPath
+} = require('./webpack/config')
+
+const dotenv = new Dotenv({
+  systemvars: true
+})
+
+module.exports = env => {
   return {
     entry: {
-      app: ['./src/index.js']
+      app: ['@babel/polyfill', 'whatwg-fetch', srcPath]
     },
     output: {
       filename: '[name].[hash].js',
-      path: dist,
-      publicPath: '/',
-      chunkFilename: '[name].[hash].js'
+      path: distPath,
+      publicPath: '/'
     },
-    stats: 'errors-only',
     module: {
       rules: [
         {
-          // set up standard-loader as a preloader
-          enforce: 'pre',
-          test: /\.jsx?$/,
-          loader: 'standard-loader',
-          exclude: /(node_modules|bower_components)/,
-          options: {
-            // config options to be passed through to standard e.g.
-            parser: 'babel-eslint'
-          }
+          test: /\.css$/,
+          use: [ 'style-loader', 'css-loader' ]
         },
         {
           test: /\.js$/,
@@ -45,51 +48,19 @@ module.exports = _ => {
               context: 'src'
             }
           }
-        },
-        {
-          test: /\.css$/,
-          use: ['style-loader', 'css-loader']
         }
       ]
     },
-    devServer: {
-      historyApiFallback: true,
-      contentBase: dist,
-      compress: true,
-      port: 8081,
-      open: true,
-      hot: true,
-      stats: 'errors-only',
-      proxy: {
-        '/api/**': {
-          // target: 'http://localhost:5454',
-          secure: false,
-          changeOrigin: true
-        }
-      }
-      // https: true
-    },
-    devtool: 'source-map',
     plugins: [
-      new CleanWebpackPlugin(),
-      new HtmlWebPackPlugin({
-        template: './src/templates/index.html',
-        filename: './index.html'
-      }),
-      new ContextReplacementPlugin(/moment[/\\]locale$/, /fr/)],
-    optimization: {
-      splitChunks: {
-        cacheGroups: {
-          defaultVendors: {
-            test: /[\\/]node_modules[\\/]/,
-            name: 'vendors',
-            chunks: 'initial',
-            enforce: true
-          }
-        }
-      },
-      runtimeChunk: {
-        name: 'manifest'
+      htmlPlugin,
+      dotenv
+    ],
+    devServer: {
+      contentBase: distPath,
+      historyApiFallback: true,
+      port: 7070,
+      proxy: {
+        '/api': 'http://localhost:5000'
       }
     }
   }
