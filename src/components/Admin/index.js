@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { createUseStyles } from 'react-jss'
 import style from './style'
+import fetch from 'node-fetch'
 
 const useStyles = createUseStyles(style)
 
@@ -8,7 +9,19 @@ export default () => {
   const [name, setName] = useState('')
   const [image, setImage] = useState('')
   const [download, setDownload] = useState('')
-  const { inputClass, titleClass, container, smallTitleClass, buttonClass, form, imageContainerStyle, imageStyle } = useStyles()
+  const [description, setDescription] = useState('')
+  const upload = (data) => {
+    fetch('/api/projects/addproject', {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: { 'Content-Type': 'application/json' }
+    })
+      .then(res => res.json())
+      .then(json => {
+        console.warn(json)
+      })
+  }
+  const { inputClass, titleClass, inputAreaClass, container, smallTitleClass, buttonClass, form, imageContainerStyle, imageStyle } = useStyles()
   return (
     <div className={container}>
       <div className={form}>
@@ -37,7 +50,15 @@ export default () => {
           type='text'
           onChange={e => setDownload(e.target.value)}
         />
-        <button className={buttonClass}>Add Item</button>
+        <p className={smallTitleClass}>Description</p>
+        <textarea
+          className={inputAreaClass}
+          placeholder='Fill with your item Description'
+          value={description}
+          type='text'
+          onChange={e => setDescription(e.target.value)}
+        />
+        <button onClick={() => upload({ title: name, thumbnail: image, description: description, downloadLink: download })} className={buttonClass}>Add Item</button>
       </div>
       <div className={imageContainerStyle}>
         <img src={image} className={imageStyle} />

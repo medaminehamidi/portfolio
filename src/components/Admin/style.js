@@ -17,6 +17,24 @@ export default {
     fontFamily: '\'Roboto\', sans-serif',
     backgroundColor: '#00000008'
   },
+  inputAreaClass: {
+    border: '1px solid rgba(0, 0, 0, 0.12)',
+    '&::placeholder': {
+      color: '#707070',
+      fontFamily: '\'Roboto\', sans-serif',
+      fontSize: 19
+    },
+    '&:focus': {
+      boxShadow: '0px 0px 1px 1px rgba(0, 0, 0, 0.12)'
+    },
+    width: '80%',
+    height: 200,
+    fontSize: 24,
+    padding: 10,
+    borderRadius: 6,
+    fontFamily: '\'Roboto\', sans-serif',
+    backgroundColor: '#00000008'
+  },
   titleClass: {
     fontSize: 32,
     color: '#000',
@@ -91,7 +109,7 @@ export default {
     alignItems: 'center',
     justifyContent: 'center',
     padding: 34,
-    height: 600
+    height: 800
   },
   imageContainerStyle: {
     width: 350

@@ -9,9 +9,13 @@ import { push } from 'connected-react-router'
 
 const useStyles = createUseStyles(style)
 
-export default () => {
+export default ({ data, searchedData, setSearchedData }) => {
   const [search2, setSearch] = useState('')
   const dispatch = useDispatch()
+  const searchCourse = (data, searchTerm) => {
+    if (searchTerm.length === 0) return data
+    return data.filter(item => item.title.toLowerCase().includes(searchTerm.toLowerCase()))
+  }
   // const matches = useMediaQuery('(min-width:1100px)')
   const { logoStyle, topbarRightSide, topbar, title2, topbarLeftSide, textinput, button, topSection, searchContainer, searchSubContainer, bigTitle } = useStyles()
   return (
@@ -25,22 +29,6 @@ export default () => {
             </Typography>
           </div>
           <div className={topbarLeftSide}>
-            {/* {matches && (
-              <>
-                <Typography variant='h4' className={title}>
-                  Explore
-                </Typography>
-                <Typography variant='h4' className={title}>
-                  Licence
-                </Typography>
-                <Typography variant='h4' className={title}>
-                  Upload
-                </Typography>
-              </>
-            )}
-            <Typography variant='h4' className={title}>
-              ...
-            </Typography> */}
             <Button variant='contained' onClick={() => dispatch(push('/admin'))} className={button}>
               Admin Page
             </Button>
@@ -58,6 +46,7 @@ export default () => {
               variant='outlined'
               onChange={(e) => {
                 setSearch(e.target.value)
+                setSearchedData(searchCourse(data, e.target.value))
               }}
               value={search2}
               InputProps={{

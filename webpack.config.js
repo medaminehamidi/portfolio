@@ -30,7 +30,7 @@ module.exports = env => {
       rules: [
         {
           test: /\.css$/,
-          use: [ 'style-loader', 'css-loader' ]
+          use: ['style-loader', 'css-loader']
         },
         {
           test: /\.js$/,
@@ -60,7 +60,9 @@ module.exports = env => {
       historyApiFallback: true,
       port: 7070,
       proxy: {
-        '/api': 'http://localhost:5000'
+        '/api': 'http://localhost:5000',
+        secure: false,
+        changeOrigin: true
       }
     }
   }

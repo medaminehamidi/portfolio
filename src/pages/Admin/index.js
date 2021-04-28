@@ -1,16 +1,17 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import Admin from '../../components/Admin'
-import Login from '../../components/Login'
+// import Login from '../../components/Login'
 
 export default () => {
-  const [access, setAccess] = useState(false)
+  // const [access, setAccess] = useState(false)
   return (
     <>
-      {!access
+      {/* {!access
         ? (
-          <Login setAccess={setAccess} />)
-        : (
-          <Admin />)}
+          <Login setAccess={setAccess} />) */}
+      {/* : ( */}
+      <Admin />
+      {/* )} */}
     </>
   )
 }

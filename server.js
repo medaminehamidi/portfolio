@@ -4,22 +4,18 @@ import path from 'path'
 import { urlencoded, json } from 'body-parser'
 
 const app = express()
-var distPath = path.join(__dirname, '/dist')
+const distPath = path.join(__dirname, '/dist')
 
 // Bodyparser middleware
 app.use(
   urlencoded({
-    extended: false,
-    limit: '10Mb'
+    extended: false
   })
 )
-app.use(json({
-  limit: '10Mb'
-}))
+app.use(json())
 
 // Routes
 app.use('/api/projects', projects)
-
 
 // React Route
 app.use(express.static(distPath))

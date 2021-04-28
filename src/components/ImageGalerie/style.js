@@ -20,7 +20,8 @@ export default {
   }),
   picsBigRow: {
     display: 'flex',
-    flexDirection: 'row'
+    flexDirection: 'row',
+    width: '100%'
   },
   picsRow: {
     width: '90%',
@@ -37,21 +38,41 @@ export default {
     borderRadius: 2
   },
   cardTitle: {
+    position: 'absolute',
+    top: 10,
     fontSize: '16px !important',
-    display: 'none',
     color: '#fcfcfc !important',
-    position: 'relative',
-    bottom: 44,
+    lineHeight: '36px !important',
     left: 30,
-    lineHeight: '0 !important'
+    opacity: 0,
+    marginBottom: 8
+  },
+  cardDes: {
+    position: 'absolute',
+    top: 40,
+    fontSize: '12px !important',
+    color: '#fcfcfc !important',
+    height: '76%',
+    overflow: 'auto',
+    left: 30,
+    opacity: 0,
+    lineHeight: '36px !important'
   },
   cardContainer: {
+    position: 'relative',
     '&:hover': {
       '& > h4': {
-        display: 'flex'
+        opacity: 100
       }
     },
     cursor: 'pointer',
     width: '100%'
+  },
+  placeholder: {
+    width: '100%',
+    margin: 8,
+    borderRadius: 2,
+    height: 400,
+    backgroundColor: '#00000060'
   }
 }
