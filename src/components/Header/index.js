@@ -30,7 +30,7 @@ export default ({ data, searchedData, setSearchedData }) => {
           </div>
           <div className={topbarLeftSide}>
             <Button variant='contained' onClick={() => dispatch(push('/admin'))} className={button}>
-              Admin Page
+              Login
             </Button>
           </div>
         </div>

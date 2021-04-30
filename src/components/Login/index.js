@@ -11,7 +11,7 @@ export default ({ setAccess }) => {
   return (
     <div className={container}>
       <div className={form}>
-        <p className={titleClass}>Welcome Back</p>
+        <p className={titleClass}>Welcome</p>
         <p className={smallTitleClass}>Name</p>
         <input
           className={inputClass}
