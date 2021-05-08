@@ -1,6 +1,6 @@
 import { Button, IconButton, InputAdornment, TextField, Typography } from '@material-ui/core'
 import { createUseStyles } from 'react-jss'
-import { logo2 } from '../../assets'
+import { lof, logo2 } from '../../assets'
 import style from './style'
 import SearchIcon from '@material-ui/icons/Search'
 import { useState } from 'react'
@@ -17,16 +17,14 @@ export default ({ data, searchedData, setSearchedData }) => {
     return data.filter(item => item.title.toLowerCase().includes(searchTerm.toLowerCase()))
   }
   // const matches = useMediaQuery('(min-width:1100px)')
-  const { logoStyle, topbarRightSide, topbar, title2, topbarLeftSide, textinput, button, topSection, searchContainer, searchSubContainer, bigTitle } = useStyles()
+  const { logoStyle, topbarRightSide, topbar, lofStyle, topbarLeftSide, textinput, button, topSection, searchContainer, searchSubContainer, bigTitle } = useStyles()
   return (
     <>
       <div className={topSection}>
         <div className={topbar}>
           <div className={topbarRightSide}>
             <img src={logo2} className={logoStyle} />
-            <Typography variant='h4' className={title2}>
-              Pixel
-            </Typography>
+            <img src={lof} className={lofStyle} />
           </div>
           <div className={topbarLeftSide}>
             <Button variant='contained' onClick={() => dispatch(push('/admin'))} className={button}>

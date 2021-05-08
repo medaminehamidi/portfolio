@@ -3,12 +3,17 @@ import { bg } from '../../assets'
 export default {
   logoStyle: {
     width: 40,
-    height: 40
+    height: 40,
+    borderRadius: 6
+  },
+  lofStyle: {
+    width: 100
   },
   topbarRightSide: {
     display: 'flex',
     justifyContent: 'flex-start',
-    alignItems: 'center'
+    alignItems: 'center',
+    height: 40
   },
   topbarLeftSide: {
     display: 'flex',
@@ -44,7 +49,7 @@ export default {
   },
   button: {
     color: '#fff !important',
-    backgroundColor: '#05a081 !important',
+    backgroundColor: '#4dabaa !important',
     marginLeft: '12px !important'
   },
   topSection: {
