@@ -3,7 +3,7 @@ import { Route, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 export default ({ component: Component, login, onEnter, ...rest }) => {
-  console.warn('booooooooooooom') 
+  console.warn('booooooooooooom')
   const [isAuthenticated, setisAuthenticated] = useState(false)
   return(
   <Route

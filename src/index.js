@@ -12,5 +12,5 @@ ReactDOM.render(
     redirectUri='http://localhost:7070/admin'
   >
     <App />
-    </Auth0Provider>, document.getElementById('root'))
+  </Auth0Provider>, document.getElementById('root'))
 

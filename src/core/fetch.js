@@ -3,7 +3,7 @@ export default async (...p) => {
 
   args.headers = args.headers || {}
 
-  args.headers.Authorization = 'Bearer 13c6a0337fc642827efe0e6aa67a003bc1dbb'
+  // args.headers.Authorization = 'Bearer 13c6a0337fc642827efe0e6aa67a003bc1dbb'
 
   p[1] = args
 

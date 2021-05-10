@@ -1,5 +1,6 @@
 import express from 'express'
 import projects from './server/projectsRoute'
+import signin from './server/auth'
 import path from 'path'
 import { urlencoded, json } from 'body-parser'
 
@@ -16,6 +17,7 @@ app.use(json())
 
 // Routes
 app.use('/api/projects', projects)
+app.use('/api/auth', signin)
 
 // React Route
 app.use(express.static(distPath))

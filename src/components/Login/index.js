@@ -1,13 +1,23 @@
 import { useState } from 'react'
 import { createUseStyles } from 'react-jss'
 import style from './style'
+import { loginAction } from './store'
+import { useSelector, useDispatch } from 'react-redux'
 
 const useStyles = createUseStyles(style)
 
+const WrongCredentials = ({ smallTitleClass , redBox }) => <div className={redBox}>
+  <p className={smallTitleClass}></p>
+</div>
+
 export default ({ setAccess }) => {
+  const dispatch = useDispatch()
   const [name, setName] = useState('')
-  const [adress, setAdress] = useState('')
+  const [pwd, setPwd] = useState('')
+  const [isLogedIn, setIsLogedIn] = useState(false)
+  const signin = (username, password) => dispatch(loginAction(username, password))
   const { inputClass, titleClass, container, smallTitleClass, buttonClass, form } = useStyles()
+
   return (
     <div className={container}>
       <div className={form}>
@@ -15,20 +25,18 @@ export default ({ setAccess }) => {
         <p className={smallTitleClass}>Name</p>
         <input
           className={inputClass}
-          placeholder='Fill with your admin log in'
-          value={name}
+          placeholder='username'
           type='text'
           onChange={e => setName(e.target.value)}
         />
         <p className={smallTitleClass}>Password</p>
         <input
           className={inputClass}
-          placeholder='Fill with your admin password'
-          value={adress}
+          placeholder='password'
           type='password'
-          onChange={e => setAdress(e.target.value)}
+          onChange={e => setPwd(e.target.value)}
         />
-        <button onClick={() => name.toLowerCase() === 'admin' && adress === '123' ? setAccess(true) : null} className={buttonClass}>Log in</button>
+        <button onClick={() => signin({ username: name, password: pwd })} className={buttonClass}>Log in</button>
       </div>
     </div>
   )

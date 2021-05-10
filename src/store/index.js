@@ -8,11 +8,13 @@ import storage from 'redux-persist/es/storage'
 
 import rootSaga from './rootSaga'
 import createLogger from 'redux-logger'
+import { reducer as auth } from '../components/Login/store'
 
 export const history = createBrowserHistory()
 
 const reducers = {
-  router: connectRouter(history)
+  router: connectRouter(history),
+  auth
 }
 
 const rootReducer = persistCombineReducers({
