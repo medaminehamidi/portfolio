@@ -24,6 +24,7 @@ export const loginAction = (data) => ({ type: LOGIN_REQUESTED, data })
 
 function* loginGenerator(data) {
   const { username, password } = data.data
+  console.log(username, password)
   try {
     const isLoged = yield fetch(queries.signin, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(username, password ) })
     yield put({ type: LOGIN_SUCCESS, data: isLoged })
