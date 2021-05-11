@@ -6,17 +6,14 @@ import { useSelector, useDispatch } from 'react-redux'
 
 const useStyles = createUseStyles(style)
 
-const WrongCredentials = ({ smallTitleClass , redBox }) => <div className={redBox}>
-  <p className={smallTitleClass}></p>
-</div>
-
 export default ({ setAccess }) => {
+  const isAuth = useSelector(state => state.auth.match)
+  const isloading = useSelector(state => state.auth.isloading)
   const dispatch = useDispatch()
   const [name, setName] = useState('')
   const [pwd, setPwd] = useState('')
-  const [isLogedIn, setIsLogedIn] = useState(false)
   const signin = (username, password) => dispatch(loginAction(username, password))
-  const { inputClass, titleClass, container, smallTitleClass, buttonClass, form } = useStyles()
+  const { inputClass, titleClass, loader, container, redBox, smallTitleClass, buttonClass, form } = useStyles()
 
   return (
     <div className={container}>
@@ -36,7 +33,12 @@ export default ({ setAccess }) => {
           type='password'
           onChange={e => setPwd(e.target.value)}
         />
-        <button onClick={() => signin({ username: name, password: pwd })} className={buttonClass}>Log in</button>
+        {!isAuth &&
+          <div className={redBox}>
+            <p className={smallTitleClass}>wrong input</p>
+          </div>}
+
+        <button onClick={() => signin({ username: name, password: pwd })} className={buttonClass}>{isloading ? <div className={loader} /> : 'login'}</button>
       </div>
     </div>
   )

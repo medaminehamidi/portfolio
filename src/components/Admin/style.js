@@ -58,7 +58,21 @@ export default {
     borderRadius: 10,
     color: 'white',
     fontSize: 20,
-    marginBottom: 64
+    marginBottom: 64,
+    marginLeft: 16
+  },
+  buttonClass2: {
+    cursor: 'pointer',
+    marginTop: 52,
+    width: 260,
+    height: 52,
+    background: '#fff 0% 0% no-repeat padding-box',
+    border: '1px solid #05a081',
+    borderRadius: 10,
+    color: '#05a081',
+    fontSize: 20,
+    marginBottom: 64,
+    marginLeft: 16
   },
   productImage: {
     width: 70

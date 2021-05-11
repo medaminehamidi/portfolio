@@ -18,7 +18,7 @@ router.post('/signin', async (req, res) => {
     if(match) {
        res.status(200).json({ match })
     }
-  else res.status(500).json({err : 'wrong credentials'})
+  else res.status(200).json({ match })
  
 })
 

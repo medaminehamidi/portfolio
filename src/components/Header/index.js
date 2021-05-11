@@ -4,7 +4,7 @@ import { lof, logo2 } from '../../assets'
 import style from './style'
 import SearchIcon from '@material-ui/icons/Search'
 import { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { push } from 'connected-react-router'
 
 const useStyles = createUseStyles(style)
@@ -12,6 +12,7 @@ const useStyles = createUseStyles(style)
 export default ({ data, searchedData, setSearchedData }) => {
   const [search2, setSearch] = useState('')
   const dispatch = useDispatch()
+  const isAuth = useSelector(state => state.auth.match)
   const searchCourse = (data, searchTerm) => {
     if (searchTerm.length === 0) return data
     return data.filter(item => item.title.toLowerCase().includes(searchTerm.toLowerCase()))
@@ -28,7 +29,7 @@ export default ({ data, searchedData, setSearchedData }) => {
           </div>
           <div className={topbarLeftSide}>
             <Button variant='contained' onClick={() => dispatch(push('/admin'))} className={button}>
-              Login
+              {isAuth ? 'Admin' : 'Login'}
             </Button>
           </div>
         </div>

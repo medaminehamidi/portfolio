@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { createUseStyles } from 'react-jss'
 import style from './style'
 import fetch from 'node-fetch'
+import { push } from 'connected-react-router'
+import { useDispatch } from 'react-redux'
 
 const useStyles = createUseStyles(style)
 
@@ -10,6 +12,7 @@ export default () => {
   const [image, setImage] = useState('')
   const [download, setDownload] = useState('')
   const [description, setDescription] = useState('')
+  const dispatch = useDispatch()
   const upload = (data) => {
     fetch('/api/projects/addproject', {
       method: 'POST',
@@ -21,7 +24,7 @@ export default () => {
         console.warn(json)
       })
   }
-  const { inputClass, titleClass, inputAreaClass, container, smallTitleClass, buttonClass, form, imageContainerStyle, imageStyle } = useStyles()
+  const { inputClass, titleClass, inputAreaClass, buttonClass2, container, smallTitleClass, buttonClass, form, imageContainerStyle, imageStyle } = useStyles()
   return (
     <div className={container}>
       <div className={form}>
@@ -59,6 +62,7 @@ export default () => {
           onChange={e => setDescription(e.target.value)}
         />
         <button onClick={() => upload({ title: name, thumbnail: image, description: description, downloadLink: download })} className={buttonClass}>Add Item</button>
+        <button onClick={() => dispatch(push('/'))} className={buttonClass2}>Go to home</button>
       </div>
       <div className={imageContainerStyle}>
         <img src={image} className={imageStyle} />

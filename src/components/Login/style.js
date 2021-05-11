@@ -17,6 +17,12 @@ export default {
     fontFamily: '\'Roboto\', sans-serif',
     backgroundColor: '#00000008'
   },
+  redBox: {
+    width: '84%',
+    height: 29,
+    backgroundColor: '#ff000054',
+    borderRadius: 5
+  },
   titleClass: {
     fontSize: 32,
     color: '#000',
@@ -32,6 +38,9 @@ export default {
   },
   buttonClass: {
     cursor: 'pointer',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
     marginTop: 52,
     width: 260,
     height: 52,
@@ -74,6 +83,9 @@ export default {
     fontFamily: '\'Roboto\', sans-serif',
     marginBottom: 16
   },
+  form: {
+    width: 600
+  },
   price: {
     fontSize: 16,
     color: '#707070',
@@ -92,5 +104,30 @@ export default {
     justifyContent: 'center',
     padding: 34,
     height: 600
+  },
+  loader: {
+    display: ' inline-block',
+    width: 46,
+    height: 52,
+    '&:after': {
+      content: '""',
+      display: 'block',
+      width: 30,
+      height: 30,
+      margin: 4,
+      borderRadius: '50%',
+      border: '6px solid #fff',
+      borderColor: '#fff transparent #fff transparent',
+      animation: '$loader 1.2s linear infinite'
+    }
+  },
+  '@keyframes loader': {
+    '0%': {
+      transform: 'rotate(0deg)'
+    },
+    '100%': {
+      transform: ' rotate(360deg)'
+    }
   }
 }
+
