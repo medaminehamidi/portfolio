@@ -1,6 +1,6 @@
 import express from 'express'
-import projects from './server/projectsRoute'
-import signin from './server/auth'
+import projects from './projectsRoute'
+import signin from './auth'
 import path from 'path'
 import { urlencoded, json } from 'body-parser'
 
