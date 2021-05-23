@@ -22,7 +22,7 @@ app.use('/api/auth', signin)
 // React Route
 app.use(express.static(distPath))
   .get('*', (_, res) => {
-    res.sendFile('index.html', {
+    res.sendFile('./client/dist/index.html', {
       root: distPath
     })
   })
